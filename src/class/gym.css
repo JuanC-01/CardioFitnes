@@ -1,0 +1,192 @@
+.logo-background {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    width: 100%;
+    height: 95vh;
+    background-image: url('../img/logo.png');
+    background-size: auto;
+    background-position: center;
+}
+
+
+h1 {
+    text-align: center;
+    font-family: "Arial", sans-serif;
+    margin-bottom: 15px;
+}
+
+.custom-header {
+    background-color: rgba(19, 99, 190, 0.486);
+    color: black;
+    text-align: center;
+}
+
+
+.custom-cell {
+    background-color: rgba(255, 255, 255, 0.719);
+    color: black;
+    text-align: center;
+}
+
+.row-debe {
+    background-color: #ce0d0db4;
+    /* Color para estado DEBE */
+}
+
+.row-pagado {
+    background-color: #07fc0756;
+    /* Color para estado PAGADO */
+}
+
+.row-desconocido {
+    background-color: #a7a716;
+    /* Color para estado desconocido */
+}
+
+/* gym.css */
+.chart-container {
+    width: 100%;
+    /* Ancho completo del contenedor */
+    height: 90%;
+    /* Altura del gráfico, ajusta según sea necesario */
+}
+
+/* gym.css */
+.form-containerEG {
+    background-color: rgba(255, 255, 255, 0.945);
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: 1px 2px 10px 2px rgba(0, 0, 0, 1);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 90%;
+    max-height: 90%;
+    width: 70%;
+    height: 70%;
+    overflow: hidden;
+    /* Para prevenir que el contenido desborde */
+}
+
+
+
+.table-consulta {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    width: 100%;
+    height: 95vh;
+    background-size: auto;
+    background-position: center;
+}
+
+.table-container {
+    background-color: rgba(255, 255, 255, 0.048);
+    position: fixed;
+    top: 5%;
+    left: 0;
+    right: 0;
+    width: 90%;
+    margin: 0 auto;
+}
+.table-containermen {
+    background-color: rgba(255, 255, 255, 0.048);
+    position: fixed;
+    top: 5%;
+    left: 0;
+    right: 0;
+    width: 79%;
+    margin: 0 auto;
+}
+
+.table-containercon {
+    background-color: rgba(255, 255, 255, 0.048);
+    position: fixed;
+    top: 10%;
+    left: 0;
+    right: 0;
+    width: 53.5%;
+    margin: 0 auto;
+}
+
+.table-containercon1 {
+    background-color: rgba(255, 255, 255, 0.048);
+    position: fixed;
+    top: 10%;
+    left: 0;
+    right: 0;
+    width: 39.4%;
+    margin: 0 auto;
+}
+
+.fixed-background {
+    background-color: rgba(255, 255, 255, 0.616);
+    padding: 50px;
+    position: absolute;
+    padding: 1%;
+    top: 60%;
+    left: 60%;
+    transform: translate(-65%, -60%);
+    width: 85%;
+    height: 100%;
+
+}
+
+.form-containerE {
+    background-color: rgba(255, 255, 255, 0.945);
+    padding: 50px;
+    border-radius: 70px;
+    box-shadow: 1px 2px 10px 2px rgba(0, 0, 0, 1);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 90%;
+    max-height: 90%;
+    width: 55%;
+    height: 70%;
+}
+
+.form-container {
+    background-color: rgba(255, 255, 255, 0.945);
+    padding: 50px;
+    border-radius: 30px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 1);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 90%;
+    max-height: 90%;
+    width: 900px;
+    height: 600px;
+}
+
+
+.home-background {
+    margin: 0;
+    padding: 450px;
+    background-image: url('../img/logo.png');
+    background-size: cover;
+    background-position: initial;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1%;
+
+}
+
+.logo {
+    width: 110%;
+    height: 100px;
+    background-image: url('../img/logo.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 40%;
+    margin-right: 15%;
+    margin: auto;
+}
