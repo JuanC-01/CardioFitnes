@@ -12,7 +12,7 @@ app.use('/backend/image', express.static(path.join(__dirname, './image')));
 
 const db = mysql.createConnection({
     host: "localhost",
-    port: "3307",
+    port: "3306",
     user: "root",
     password: "",
     database: "cardiofitness"
@@ -35,8 +35,8 @@ app.use((req, res, next) => {
 // Usar las rutas
 app.use('/', routes);
 
-app.listen(8081, () => {
-    console.log("Escuchando en el puerto 8081");
+app.listen(80, () => {
+    console.log("Escuchando en el puerto 80");
 });
 
 
