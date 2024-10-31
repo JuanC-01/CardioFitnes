@@ -81,10 +81,10 @@ export default function RegistroProducto() {
                 dataToSend.append('nombrep', prodadd.nombrep);
                 dataToSend.append('preciop', prodadd.preciop);
                 dataToSend.append('imagenpr', prodadd.imagenpr);
-                url = 'http://cardiofit.ddns.net:80/Producto/registro';
+                url = 'http://cardiofit.ddns.net:8081/Producto/registro';
             } else {
                 dataToSend = servicioadd;
-                url = 'http://cardiofit.ddns.net:80/Servicio/registro';
+                url = 'http://cardiofit.ddns.net:8081/Servicio/registro';
             }
 
             axios.post(url, dataToSend, {

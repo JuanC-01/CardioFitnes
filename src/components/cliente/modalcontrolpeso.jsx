@@ -34,7 +34,7 @@ export default function ModalPeso({ open, onClose, onSave, onCancel, editedField
                         <Grid item xs={4} container justifyContent="center" alignItems="center">
                             {editedFields.imagen && (
                                 <img
-                                    src={`http://cardiofit.ddns.net:80/backend/image/${editedFields.imagen}`}
+                                    src={`http://cardiofit.ddns.net:8081/backend/image/${editedFields.imagen}`}
                                     style={{ width: 250, height: 250 }}
                                 />
                             )}

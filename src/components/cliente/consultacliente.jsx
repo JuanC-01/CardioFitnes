@@ -76,7 +76,7 @@ export default function DataTable() {
     };
 
     useEffect(() => {
-        axios.get('http://cardiofit.ddns.net:80/Cliente/consultar-clientes')
+        axios.get('http://cardiofit.ddns.net:8081/Cliente/consultar-clientes')
             .then(response => {
                 const clientesConId = response.data.map(cliente => ({
                     ...cliente,
@@ -92,7 +92,7 @@ export default function DataTable() {
     useEffect(() => {
         const fetchHorario = async () => {
             try {
-                const response = await axios.get('http://cardiofit.ddns.net:80/Cliente/consultar-horario');
+                const response = await axios.get('http://cardiofit.ddns.net:8081/Cliente/consultar-horario');
                 setHorario(response.data);
             } catch (error) {
                 console.error('Error al obtener horarios:', error);
@@ -111,7 +111,7 @@ export default function DataTable() {
     useEffect(() => {
         const fetchEps = async () => {
             try {
-                const response = await axios.get('http://cardiofit.ddns.net:80/Eps/consultar-eps');
+                const response = await axios.get('http://cardiofit.ddns.net:8081/Eps/consultar-eps');
                 setEps(response.data);
             } catch (error) {
                 console.error('Error al obtener eps:', error);
@@ -228,7 +228,7 @@ export default function DataTable() {
             return;
         }
 
-        axios.post('http://cardiofit.ddns.net:80/Cliente/actualizar', formData, {
+        axios.post('http://cardiofit.ddns.net:8081/Cliente/actualizar', formData, {
             headers: {
                 'Content-Type': 'multipart/form-data',
             },
@@ -240,7 +240,7 @@ export default function DataTable() {
                     setNotificationSeverity('success');
                     setNotificationMessage('Datos Cliente Actualizados');
                     setTimeout(() => {
-                        axios.get('http://cardiofit.ddns.net:80/Cliente/consultar-clientes')
+                        axios.get('http://cardiofit.ddns.net:8081/Cliente/consultar-clientes')
                             .then(response => {
                                 const clientesConId = response.data.map(cliente => ({
                                     ...cliente,
@@ -268,7 +268,7 @@ export default function DataTable() {
                 pesokg: editedPesoFields.peso,
             };
 
-            axios.post('http://cardiofit.ddns.net:80/Cliente/registrar-peso', formData)
+            axios.post('http://cardiofit.ddns.net:8081/Cliente/registrar-peso', formData)
                 .then(res => {
                     const message = res.data.message;
                     setOpenNotification(true);
@@ -295,7 +295,7 @@ export default function DataTable() {
             field: 'imagen', headerName: '', width: 100, headerClassName: 'custom-header',
             renderCell: (params) => (
                 <img
-                    src={`http://cardiofit.ddns.net:80/backend/image/${params.row.imagen}`}
+                    src={`http://cardiofit.ddns.net:8081/backend/image/${params.row.imagen}`}
                     alt="Cliente"
                     style={{ width: 50, height: 50, borderRadius: '50%' }}
                 />

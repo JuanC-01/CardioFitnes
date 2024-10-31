@@ -70,8 +70,8 @@ export default function ConsultaProducto() {
         if (!tipoVista) return; // Asegúrate de que tipoVista esté definido
         try {
             const response = await axios.get(tipoVista === 'productos'
-                ? 'http://cardiofit.ddns.net:80/Producto/consultar-productos'
-                : 'http://cardiofit.ddns.net:80/Servicio/consultar-servicios'
+                ? 'http://cardiofit.ddns.net:8081/Producto/consultar-productos'
+                : 'http://cardiofit.ddns.net:8081/Servicio/consultar-servicios'
             );
             const dataWithIds = response.data.map((item, index) => ({
                 ...item,
@@ -168,8 +168,8 @@ export default function ConsultaProducto() {
         const noHayErrores = Object.keys(errors).length === 0;
         if (noHayErrores) {
             const url = tipoVista === 'productos'
-                ? 'http://cardiofit.ddns.net:80/Producto/update'
-                : 'http://cardiofit.ddns.net:80/Servicio/update';
+                ? 'http://cardiofit.ddns.net:8081/Producto/update'
+                : 'http://cardiofit.ddns.net:8081/Servicio/update';
 
             axios.post(url, formData)
                 .then(res => {
@@ -212,7 +212,7 @@ export default function ConsultaProducto() {
 
         const noHayErrores = Object.keys(errors).length === 0;
         if (noHayErrores && fk_idproducto) {
-            const url = `http://cardiofit.ddns.net:80/Producto/registrar-compra/${fk_idproducto}`;
+            const url = `http://cardiofit.ddns.net:8081/Producto/registrar-compra/${fk_idproducto}`;
 
             axios.post(url, registroData)
                 .then(res => {
@@ -244,7 +244,7 @@ export default function ConsultaProducto() {
             renderCell: (params) => (
                 tipoVista === 'productos' ? (
                     <img
-                        src={`http://cardiofit.ddns.net:80/backend/image/${params.row.imagen}`}
+                        src={`http://cardiofit.ddns.net:8081/backend/image/${params.row.imagen}`}
                         alt="Producto"
                         style={{ width: 50, height: 50, borderRadius: '50%' }}
                     />

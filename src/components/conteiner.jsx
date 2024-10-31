@@ -41,6 +41,7 @@ const Conteiner = () => {
     <div style={{ display: 'flex' }}>
       <Header />
       <div style={{ flex: 1, padding: '20px' }}>
+        
         {getComponent()}
       </div>
     </div>

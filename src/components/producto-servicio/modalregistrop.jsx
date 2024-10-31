@@ -61,7 +61,7 @@ export default function ModalRegistro({ open, onClose, onSave, onCancel, editedF
                             ) : (
                                 editedFields.imagen && (
                                     <img
-                                        src={`http://cardiofit.ddns.net:80/backend/image/${editedFields.imagen}`}
+                                        src={`http://cardiofit.ddns.net:8081/backend/image/${editedFields.imagen}`}
                                         style={{ width: 250, height: 250 }}
                                         alt="Cliente"
                                     />

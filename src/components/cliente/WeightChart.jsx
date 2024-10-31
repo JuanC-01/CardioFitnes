@@ -35,7 +35,7 @@ const WeightChart = ({ cedula, isEditing }) => {
 
     const fetchWeightData = async () => {
         try {
-            const response = await axios.get(`http://cardiofit.ddns.net:80/Cliente/historial-peso/${cedula}`, {
+            const response = await axios.get(`http://cardiofit.ddns.net:8081/Cliente/historial-peso/${cedula}`, {
                 params: { año: selectedYear }
             });
             const data = response.data;
@@ -67,7 +67,7 @@ const WeightChart = ({ cedula, isEditing }) => {
 
     const fetchYears = async () => {
         try {
-            const response = await axios.get(`http://cardiofit.ddns.net:80/Cliente/historial-peso/${cedula}`);
+            const response = await axios.get(`http://cardiofit.ddns.net:8081/Cliente/historial-peso/${cedula}`);
             const distinctYears = [...new Set(response.data.map(entry => new Date(entry.fecha).getFullYear()))];
             setYears(distinctYears);
         } catch (error) {
@@ -104,7 +104,7 @@ const WeightChart = ({ cedula, isEditing }) => {
             });
 
             try {
-                await axios.post(`http://cardiofit.ddns.net:80/Cliente/actualizar-peso`, {
+                await axios.post(`http://cardiofit.ddns.net:8081/Cliente/actualizar-peso`, {
                     idpeso: selectedWeightId,
                     cedula,
                     nuevoPeso: editedWeight,
@@ -131,7 +131,7 @@ const WeightChart = ({ cedula, isEditing }) => {
     const handleConfirmDelete = async () => {
         if (selectedWeightId !== null) {
             try {
-                await axios.delete(`http://cardiofit.ddns.net:80/Cliente/eliminar-peso`, {
+                await axios.delete(`http://cardiofit.ddns.net:8081/Cliente/eliminar-peso`, {
                     data: { idpeso: selectedWeightId, cedula }
                 });
                 console.log("Peso eliminado correctamente");

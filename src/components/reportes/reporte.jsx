@@ -44,11 +44,11 @@ export default function ReportesMes() {
       const formattedMonth = month.startOf('month').format('YYYY-MM-DD');
 
       // Fetch mensualidades
-      const responseMensualidad = await axios.get(`http://cardiofit.ddns.net:80/Reporte/consultar?fecha=${formattedMonth}`);
+      const responseMensualidad = await axios.get(`http://cardiofit.ddns.net:8081/Reporte/consultar?fecha=${formattedMonth}`);
       const dataMensualidad = responseMensualidad.data;
 
       // Fetch ventas
-      const responseVentas = await axios.get(`http://cardiofit.ddns.net:80/Reporte/consultar-ventas?fecha=${formattedMonth}`);
+      const responseVentas = await axios.get(`http://cardiofit.ddns.net:8081/Reporte/consultar-ventas?fecha=${formattedMonth}`);
       const dataVentas = responseVentas.data;
 
       // Combina los datos
@@ -69,11 +69,11 @@ export default function ReportesMes() {
       const formattedMonth = selectedMonth.startOf('month').format('YYYY-MM-DD');
 
       // Fetch mensualidades
-      const response = await axios.get(`http://cardiofit.ddns.net:80/Reporte/reporte?fecha=${formattedMonth}`);
+      const response = await axios.get(`http://cardiofit.ddns.net:8081/Reporte/reporte?fecha=${formattedMonth}`);
       const reportData = response.data;
 
       // Fetch ventas detalladas
-      const responseVentasdeta = await axios.get(`http://cardiofit.ddns.net:80/Reporte/consultar-ventasdetallada?fecha=${formattedMonth}`);
+      const responseVentasdeta = await axios.get(`http://cardiofit.ddns.net:8081/Reporte/consultar-ventasdetallada?fecha=${formattedMonth}`);
       const dataVentas = responseVentasdeta.data;
 
       return { reportData, dataVentas }; // Devuelve ambos conjuntos de datos

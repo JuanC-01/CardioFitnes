@@ -64,7 +64,7 @@ export default function Mensualidad() {
     };
 
     useEffect(() => {
-        axios.get('http://cardiofit.ddns.net:80/Cliente/consultar-clientes')
+        axios.get('http://cardiofit.ddns.net:8081/Cliente/consultar-clientes')
             .then(response => {
                 const clientesConId = response.data.map(cliente => ({
                     ...cliente,
@@ -82,7 +82,7 @@ export default function Mensualidad() {
             try {
                 const clientesConMensualidad = await Promise.all(rows.map(async (cliente) => {
                     try {
-                        const mensualidadResponse = await axios.get(`http://cardiofit.ddns.net:80/Mensualidad/ultimomensualidad/${cliente.cedula}`);
+                        const mensualidadResponse = await axios.get(`http://cardiofit.ddns.net:8081/Mensualidad/ultimomensualidad/${cliente.cedula}`);
                         if (mensualidadResponse.data) {
                             return {
                                 ...cliente,
@@ -124,7 +124,7 @@ export default function Mensualidad() {
     useEffect(() => {
         const fetchServicio = async () => {
             try {
-                const response = await axios.get('http://cardiofit.ddns.net:80/Servicio/consultar-servicio');
+                const response = await axios.get('http://cardiofit.ddns.net:8081/Servicio/consultar-servicio');
                 setServicio(response.data);
             } catch (error) {
                 console.error('Error al obtener servicios:', error);
@@ -184,7 +184,7 @@ export default function Mensualidad() {
             };
 
             // Hacer la petición al servidor
-            axios.post('http://cardiofit.ddns.net:80/Mensualidad/registro', formData)
+            axios.post('http://cardiofit.ddns.net:8081/Mensualidad/registro', formData)
                 .then(res => {
                     const message = res.data.message;
                     setOpenNotification(true);
@@ -192,7 +192,7 @@ export default function Mensualidad() {
                     setNotificationMessage(message);
 
                     // Hacer la consulta de la última mensualidad para actualizar la tabla
-                    return axios.get(`http://cardiofit.ddns.net:80/Mensualidad/ultimomensualidad/${editedClientPeso.cedula}`);
+                    return axios.get(`http://cardiofit.ddns.net:8081/Mensualidad/ultimomensualidad/${editedClientPeso.cedula}`);
                 })
                 .then(mensualidadResponse => {
                     if (mensualidadResponse.data) {

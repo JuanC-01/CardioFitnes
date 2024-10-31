@@ -55,12 +55,12 @@ export default function Registrocliente() {
   };
 
   useEffect(() => {
-    axios.get('http://cardiofit.ddns.net:80/Eps/consultar-eps')
+    axios.get('http://cardiofit.ddns.net:8081/Eps/consultar-eps')
       .then(res => setEpsOptions(res.data))
       .catch(err => console.error('Error al obtener Horarios:', err));
   }, []);
   useEffect(() => {
-    axios.get('http://cardiofit.ddns.net:80/Cliente/consultar-horario')
+    axios.get('http://cardiofit.ddns.net:8081/Cliente/consultar-horario')
       .then(res => setHorarioOptions(res.data))
       .catch(err => console.error('Error al obtener Horarios:', err));
   }, []);
@@ -136,7 +136,7 @@ export default function Registrocliente() {
     formData.append('talla', cliente.talla);
     formData.append('imagenp', cliente.imagenp);
 
-    axios.post('http://cardiofit.ddns.net:80/Cliente/registrar', formData, {
+    axios.post('http://cardiofit.ddns.net:8081/Cliente/registrar', formData, {
       headers: { 'Content-Type': 'multipart/form-data' },
     })
       .then(res => {

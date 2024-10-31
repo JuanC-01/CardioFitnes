@@ -30,7 +30,7 @@ export default function VentaProducto() {
     };
 
     useEffect(() => {
-        axios.get('http://cardiofit.ddns.net:80/Producto/consultar-productos')
+        axios.get('http://cardiofit.ddns.net:8081/Producto/consultar-productos')
             .then(res => setProdOptions(res.data))
             .catch(err => console.error('Error al obtener productos:', err));
     }, []);
@@ -68,7 +68,7 @@ export default function VentaProducto() {
         if (noHayErrores) {
             try {
                 // Realiza la solicitud para registrar la venta
-                const response = await axios.post(`http://cardiofit.ddns.net:80/Producto/registrar-venta/${selectedProducto.id}`, {
+                const response = await axios.post(`http://cardiofit.ddns.net:8081/Producto/registrar-venta/${selectedProducto.id}`, {
                     cantidad: quantity,
                 });
                 
@@ -109,7 +109,8 @@ export default function VentaProducto() {
                 <Container component="main" maxWidth="xs">
                     <CssBaseline />
                     <div className="form-containerE">
-                        <Typography component="h2" variant="h7" gutterBottom>
+                    <div className='logo'></div>
+                        <Typography component="h3" variant="h7" gutterBottom>
                             VENTA PRODUCTOS
                         </Typography>
 
@@ -119,7 +120,7 @@ export default function VentaProducto() {
                                     <img src={imagePreview} style={{ width: 200, height: 200 }} alt="Vista previa" />
                                 ) : (
                                     selectedProducto && (
-                                        <img src={`http://cardiofit.ddns.net:80/backend/image/${selectedProducto.imagen}`} style={{ width: 200, height: 200 }} alt="Producto" />
+                                        <img src={`http://cardiofit.ddns.net:8081/backend/image/${selectedProducto.imagen}`} style={{ width: 200, height: 200 }} alt="Producto" />
                                     )
                                 )}
                             </Grid>
